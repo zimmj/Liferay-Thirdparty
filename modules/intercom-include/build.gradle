@@ -1,0 +1,3 @@
+dependencies {
+    compileInclude group: 'io.intercom', name: 'intercom-java', version: '2.8.1'
+}

@@ -1,0 +1,8 @@
+def withoutX = {
+    exclude group: 'com.fasterxml.jackson.core', module: '*';
+    exclude group: 'com.google.guava', module: '*'
+}
+
+dependencies {
+    compileInclude group: 'io.intercom', name: 'intercom-java', version: '2.8.1', withoutX
+}

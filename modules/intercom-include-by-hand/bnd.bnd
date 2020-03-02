@@ -1,0 +1,10 @@
+Bundle-SymbolicName: prodyna.intercom.test2
+Bundle-Version: 1.0.0
+-includeresource: \
+    lib/intercom.jar=intercom-java-2.8.1.jar, \
+    lib/guava.jar=guava-17.0.jar
+
+Bundle-ClassPath: \
+    .,\
+    lib/intercom.jar, \
+    lib/guava.jar, \

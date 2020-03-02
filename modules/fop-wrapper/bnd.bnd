@@ -1,0 +1,19 @@
+Bundle-SymbolicName: fop.wrapper
+Bundle-Version: 1.0.0
+
+Import-Package: \
+    !com.sun.*,\
+    !gnu.gcj*,\
+    !junit.*,\
+    !kaffe.util.*,\
+    !org.apache.avalon.framework.logger,\
+    !org.apache.env,\
+    !org.apache.harmony.luni.util,\
+    !org.apache.log,\
+    !org.mozilla.javascript,\
+    !org.python.*,\
+    !sun.*,\
+    !weblogic,\
+    !org.json,\
+    !org.apache.*,\
+    *
