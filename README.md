@@ -81,6 +81,31 @@ You can search for them as following:
 ```
 This can be very usefull when working with older packages like axis-2
 
+#### Where to put found OSGi modules
+If we deploy Liferay on a server, Liferay will be assembled by the init-bundle task. In this task we will add the needed
+OSGi modules to our Server to do so we have two option:
+* We add the jar to the config folder
+* We add the to the static resolver
+
+##### Add jar to config folder
+We can add all our needed Third-Party jar to one of the following folder:
+* configs/common/deploy
+* configs/common/osgi/modules
+Both will make Liferay load this jar on startup. But with this, we add this jar as well to our GIT-repository. Makes it
+unnecessary big.
+
+#### Add jar to the static resolver
+Liferay uses a static resolver on the init-bundle task. We can add libraries, when we add following statement to the root
+build.gradle file:
+```less
+dependencies {
+    providedModules group: "com.google.guava", name: "guava", version: "23.0"
+}
+```
+With this statement, Liferay will add this jar in the init-bundle step to the folder: bundles/osgi/modules and the jar
+will be started on starup.
+With this way, we don't need to download the jar and add it to GIT. It is as well simpler to change the version of the needed jar.
+
 ### Add the jar with the missing package
 A really simple way, is to add all jar with missing packages to the same module. This will solve our most dependencies issues.
 But lead the a fat-jar. The fat-jar is not really common in OSGi, because we wanna share the jar under each other. If we
