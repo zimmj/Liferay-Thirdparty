@@ -154,3 +154,13 @@ jar's we need to exclude specific packages from the import statement, to make th
 
 I hope this example helps you to understand the way, how dependencies are solved in Liferay, and explains it better than the documentation of Liferay itself.
 Feel free to make changes on this repository.
+
+#Special cases
+As I was resolving a jar with generated code. Generated SOAP client using axis-2. I came along an issue with classloaders and binary classes.
+Axis-2 generates binary classes, which are loaded on runtime into the classloader of a the module, axis-2 is in.
+But this classes are needed in another module (with another classloader) as well. To make this possible. I can use the statement:
+ ```less
+DynamicImport-Package: com.package.*
+```
+This Import is not well known, but can help in specific cases.
+Be aware, that this kind of import, should not be used commonly, please try to stick at the above ways.
