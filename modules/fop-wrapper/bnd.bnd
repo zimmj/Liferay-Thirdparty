@@ -1,6 +1,8 @@
 Bundle-SymbolicName: fop.wrapper
 Bundle-Version: 1.0.0
 
+Export-Package: org.apache.fop.*
+
 Import-Package: \
     !com.sun.*,\
     !gnu.gcj*,\
