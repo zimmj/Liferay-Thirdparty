@@ -1,7 +1,7 @@
 Bundle-SymbolicName: fop.wrapper
 Bundle-Version: 1.0.0
 
-Export-Package: org.apache.fop.*
+Export-Package: org.apache.fop.*, org.xml.sax
 
 Import-Package: \
     !com.sun.*,\

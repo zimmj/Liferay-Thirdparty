@@ -1,0 +1,4 @@
+Bundle-SymbolicName: fop.sample
+Bundle-Version: 1.0.0
+
+DynamicImport-Package: org.xml.sax
